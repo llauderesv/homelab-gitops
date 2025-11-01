@@ -1,17 +1,17 @@
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
-  name: software-infra
+  name: istio
   namespace: argocd
 spec:
   project: default
   source:
     repoURL: https://github.com/llauderesv/homelab-gitops.git
     targetRevision: main
-    path: root
+    path: infra/istio
   destination:
     server: https://kubernetes.default.svc
-    namespace: argocd
+    namespace: istio-system
   syncPolicy:
     automated:
       prune: true

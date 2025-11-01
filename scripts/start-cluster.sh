@@ -8,3 +8,5 @@ if ! command -v minikube &> /dev/null; then
 fi
 
 minikube start -p k8s-homelab --memory=2912 --cpus=4 --driver=docker 
+
+minikube profile k8s-homelab

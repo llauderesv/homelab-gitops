@@ -1,8 +1,0 @@
-resources:
-  - ../../argocd
-patches:
-  - target:
-      kind: Service
-      name: argocd-server
-      namespace: argocd
-    path: patch-argocd-server.yaml

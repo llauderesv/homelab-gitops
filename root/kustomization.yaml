@@ -1,2 +1,3 @@
 resources:
-  - applications.yaml
+  - ../infra/argocd/application.yaml
+  - ../infra/istio/application.yaml
