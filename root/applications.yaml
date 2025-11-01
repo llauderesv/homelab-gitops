@@ -1,14 +1,14 @@
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
-  name: infra-root
+  name: software-infra
   namespace: argocd
 spec:
   project: default
   source:
     repoURL: https://github.com/llauderesv/homelab-gitops.git
     targetRevision: main
-    path: overlays/local
+    path: base/overlays/local
   destination:
     server: https://kubernetes.default.svc
     namespace: argocd
