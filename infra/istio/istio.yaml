@@ -3153,7 +3153,7 @@ webhooks:
     apiGroups: [""]
     apiVersions: ["v1"]
     resources: ["pods"]
-  failurePolicy: Fail
+  failurePolicy: Ignore
   reinvocationPolicy: "Never"
   admissionReviewVersions: ["v1"]
   namespaceSelector:
