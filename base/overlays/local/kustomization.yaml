@@ -1,6 +1,6 @@
 resources:
   - ../../argocd
-
+  - ../../istio
 patches:
   - target:
       kind: Service
