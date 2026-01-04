@@ -3,9 +3,9 @@ kind: Service
 metadata:
   name: hello-world-2-service
 spec:
-  type: ClusterIP
+  type: LoadBalancer
   selector:
     app: hello-world-2
   ports:
-    - port: 80
+    - port: 3001
       targetPort: 5678
