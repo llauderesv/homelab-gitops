@@ -1,1 +1,1 @@
-# Personal Homelab GitOps set up
+# Homelab GitOps

@@ -9,3 +9,7 @@ start:
 start-argocd:
 	@echo "Staring argocd"
 	$(KUBECTL) port-forward svc/argocd-server -n argocd 8080:80
+
+tunnel:
+	@echo "Starting tunnel..."
+	$(MINIKUBE) tunnel
