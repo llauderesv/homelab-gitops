@@ -10,7 +10,7 @@ spec:
   source:
     repoURL: https://github.com/llauderesv/homelab-gitops.git
     targetRevision: HEAD
-    path: infrastructure/istio
+    path: infrastructure/cert-manager
   destination:
     server: https://kubernetes.default.svc
     namespace: argocd
