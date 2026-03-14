@@ -13,3 +13,12 @@ start-argocd:
 tunnel:
 	@echo "Starting tunnel..."
 	$(MINIKUBE) tunnel
+
+stop:
+	@echo "Stopping local cluster..."
+	$(MINIKUBE) start -p $(NAME)
+
+get-argocd-password:
+	kubectl get secret argocd-initial-admin-secret \
+  	-n argocd \
+  	-o jsonpath="{.data.password}" | base64 --decode && echo
