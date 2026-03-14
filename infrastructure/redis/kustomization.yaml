@@ -11,6 +11,7 @@ helmCharts:
     releaseName: redis
     namespace: redis
     valuesInline:
+      architecture: standalone
       image:
         registry: public.ecr.aws
         repository: bitnami/redis
@@ -30,22 +31,6 @@ helmCharts:
           timeoutSeconds: 10
           failureThreshold: 10
           successThreshold: 1
-      replica:
-        livenessProbe:
-          enabled: true
-          initialDelaySeconds: 60
-          periodSeconds: 30
-          timeoutSeconds: 10
-          failureThreshold: 10
-          successThreshold: 1
-        readinessProbe:
-          enabled: true
-          initialDelaySeconds: 30
-          periodSeconds: 15
-          timeoutSeconds: 10
-          failureThreshold: 10
-          successThreshold: 1
-    # valuesFile: values.yaml
 
 # Patch the secret password for production
 # In real setups, use Sealed Secrets or External Secrets Operator instead
