@@ -9,6 +9,8 @@ spec:
     repoURL: https://github.com/llauderesv/homelab-gitops.git
     targetRevision: HEAD
     path: argocd-apps
+    kustomize:
+      enableHelm: true
     directory:
       recurse: true
       include: '{infrastructure}/*.yaml'
