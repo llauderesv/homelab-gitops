@@ -15,8 +15,38 @@ helmCharts:
         registry: public.ecr.aws
         repository: bitnami/redis
         tag: 7.2.5-debian-12-r4
+      master:
+        livenessProbe:
+          enabled: true
+          initialDelaySeconds: 60 # give Redis more time to start
+          periodSeconds: 30 # check less frequently
+          timeoutSeconds: 10 # was 5, give script more time
+          failureThreshold: 10 # be more tolerant of failures
+          successThreshold: 1
+        readinessProbe:
+          enabled: true
+          initialDelaySeconds: 30
+          periodSeconds: 15
+          timeoutSeconds: 10
+          failureThreshold: 10
+          successThreshold: 1
+      replica:
+        livenessProbe:
+          enabled: true
+          initialDelaySeconds: 60
+          periodSeconds: 30
+          timeoutSeconds: 10
+          failureThreshold: 10
+          successThreshold: 1
+        readinessProbe:
+          enabled: true
+          initialDelaySeconds: 30
+          periodSeconds: 15
+          timeoutSeconds: 10
+          failureThreshold: 10
+          successThreshold: 1
     # valuesFile: values.yaml
- 
+
 # Patch the secret password for production
 # In real setups, use Sealed Secrets or External Secrets Operator instead
 patches:
@@ -27,4 +57,3 @@ patches:
     target:
       kind: Secret
       name: redis-secret
- 
