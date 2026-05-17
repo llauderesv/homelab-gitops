@@ -11,7 +11,7 @@ spec:
         name: http
         protocol: HTTP
       hosts:
-        - localhost
+        - hello-world.local
     # - port:
     #     number: 443
     #     name: https
