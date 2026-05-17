@@ -1,0 +1,27 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: node-1m-rps
+  labels:
+    app: node-1m-rps
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: node-1m-rps
+  template:
+    metadata:
+      labels:
+        app: node-1m-rps
+    spec:
+      containers:
+        - name: node-1m-rps
+          image: node-1m-rps:latest
+          imagePullPolicy: IfNotPresent
+          ports:
+            - containerPort: 8080
+          resources:
+            requests:
+              cpu: "500m"
+            limits:
+              cpu: "1000m"

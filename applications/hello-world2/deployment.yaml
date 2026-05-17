@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
         - name: hello-world-2
-          image: hashicorp/http-echo:latest
+          image: hashicorp/http-echo2:latest
           args:
             - "-text=Hello from App 2"
           ports:

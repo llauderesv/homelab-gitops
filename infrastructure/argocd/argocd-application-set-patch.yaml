@@ -1,0 +1,7 @@
+# Example via Argo CD Operator / Kustomize patch
+apiVersion: apps/v1
+kind: StatefulSet
+metadata:
+  name: argocd-application-controller
+spec:
+  replicas: 5 # Scale up based on cluster/app volume
