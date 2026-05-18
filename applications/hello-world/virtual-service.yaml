@@ -5,6 +5,8 @@ metadata:
 spec:
   hosts:
     - guccidemo.ddns.net
+  gateways:
+    - hello-world-gateway
   http:
     - match:
         - uri:
