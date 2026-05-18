@@ -16,6 +16,9 @@ spec:
     spec:
       containers:
         - name: hello-world
-          image: nginxdemos/hello:latest
+          image: app-1-python:latest
           ports:
-            - containerPort: 80
+            - containerPort: 8000
+          env:
+            - name: APP_NAME
+              value: hello-world
