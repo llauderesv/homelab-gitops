@@ -8,4 +8,4 @@ spec:
     app: hello-world
   ports:
     - port: 3000
-      targetPort: 80
+      targetPort: 8000
