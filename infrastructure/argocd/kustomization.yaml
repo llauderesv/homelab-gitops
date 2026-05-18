@@ -6,4 +6,4 @@ resources:
 
 patchesStrategicMerge:
   - argocd-cm-patch.yaml
-  # - argocd-server-service-patch.yaml
+  - argocd-server-service-patch.yaml

@@ -4,7 +4,7 @@ KUBECTL := kubectl
 
 start:
 	@echo "Starting local cluster..."
-	$(MINIKUBE) start -p $(NAME) --memory=2912 --cpus=4 --driver=docker
+	$(MINIKUBE) start -p $(NAME) --memory=10240 --cpus=4 --driver=docker
 
 start-argocd:
 	@echo "Staring argocd"
