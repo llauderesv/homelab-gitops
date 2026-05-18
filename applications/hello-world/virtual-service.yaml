@@ -6,7 +6,10 @@ spec:
   hosts:
     - guccidemo.ddns.net
   http:
-    - route:
+    - match:
+        - uri:
+            prefix: /
+      route:
         - destination:
             host: hello-world-service
             port:
