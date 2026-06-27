@@ -4,7 +4,7 @@ metadata:
   name: hello-world
 spec:
   hosts:
-    - guccidemo.ddns.net
+    - guccidemo.ddnsking.com
   gateways:
     - hello-world-gateway
   http:
