@@ -6,7 +6,7 @@ spec:
   hosts:
     - guccidemo.ddnsking.com
   gateways:
-    - hello-world-gateway
+    - istio-system/homelab-gateway
   http:
     - match:
         - uri:

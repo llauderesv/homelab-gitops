@@ -1,6 +1,7 @@
 NAME := k8s-homelab
 MINIKUBE := minikube
 KUBECTL := kubectl
+ISTIO_INGRESS_LOCAL_PORT ?= 8080
 
 start:
 	@echo "Starting local cluster..."
@@ -11,8 +12,8 @@ start-argocd:
 	$(MINIKUBE) service argocd-server -n argocd
 
 start-istio-ingressgateway:
-	@echo "Staring istio-ingressgateway"
-	$(MINIKUBE) service istio-ingressgateway -n istio-system
+	@echo "Forwarding localhost:$(ISTIO_INGRESS_LOCAL_PORT) to the Istio ingress gateway (Ctrl+C to stop)"
+	$(KUBECTL) --context=$(NAME) -n istio-system port-forward svc/istio-ingressgateway $(ISTIO_INGRESS_LOCAL_PORT):80
 
 tunnel:
 	@echo "Starting tunnel..."
@@ -24,5 +25,5 @@ stop:
 
 get-argocd-password:
 	kubectl get secret argocd-initial-admin-secret \
-  	-n argocd \
-  	-o jsonpath="{.data.password}" | base64 --decode && echo
+	-n argocd \
+	-o jsonpath="{.data.password}" | base64 --decode && echo
