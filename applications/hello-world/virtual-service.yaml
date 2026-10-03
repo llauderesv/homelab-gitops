@@ -10,7 +10,7 @@ spec:
   http:
     - match:
         - uri:
-            prefix: /hello-world
+            regex: '^/hello-world(/.*)?$'
       rewrite:
         uri: /
       route:
