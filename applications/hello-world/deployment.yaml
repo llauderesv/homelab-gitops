@@ -19,6 +19,8 @@ spec:
           image: hashicorp/http-echo:latest
           args:
             - "-text=Hello World"
+          ports:
+            - containerPort: 8000
           env:
             - name: APP_NAME
               value: hello-world
