@@ -11,6 +11,8 @@ spec:
     - match:
         - uri:
             prefix: /hello-world2
+      rewrite:
+        uri: /
       route:
         - destination:
             host: hello-world-2-service
