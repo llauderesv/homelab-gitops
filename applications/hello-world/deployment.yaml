@@ -20,7 +20,7 @@ spec:
           args:
             - "-text=Hello World"
           ports:
-            - containerPort: 8000
+            - containerPort: 5678
           env:
             - name: APP_NAME
               value: hello-world
