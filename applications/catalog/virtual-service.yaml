@@ -4,7 +4,7 @@ metadata:
   name: catalog
 spec:
   hosts:
-    - guccidemo.ddnsking.com
+    - localhost
   gateways:
     - istio-system/homelab-gateway
   http:
