@@ -4,7 +4,7 @@ metadata:
   name: hello-world
 spec:
   hosts:
-    - localhost
+    - homelab.local
   gateways:
     - istio-system/homelab-gateway
   http:

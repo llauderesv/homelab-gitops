@@ -4,7 +4,7 @@ metadata:
   name: catalog
 spec:
   hosts:
-    - localhost
+    - homelab.local
   gateways:
     - istio-system/homelab-gateway
   http:
