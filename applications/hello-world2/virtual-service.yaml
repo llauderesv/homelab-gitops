@@ -4,7 +4,7 @@ metadata:
   name: hello-world2
 spec:
   hosts:
-    - homelab.local
+    - host.minikube.internal
   gateways:
     - istio-system/homelab-gateway
   http:
